@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:route_generator/layouts/guest_layout.dart';
 import 'package:route_generator/route/route_names.dart';
 
 class HomePage extends StatelessWidget {

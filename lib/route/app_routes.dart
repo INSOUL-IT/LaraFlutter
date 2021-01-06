@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:route_generator/controllers/login_controller.dart';
-import 'package:route_generator/middleware/auth_middleware.dart';
+
+import 'package:route_generator/app/controllers/login_controller.dart';
+import 'package:route_generator/app/middleware/auth_middleware.dart';
+import 'package:route_generator/resources/views/content_a.dart';
+import 'package:route_generator/resources/views/content_b.dart';
+import 'package:route_generator/resources/views/dashboard.dart';
+import 'package:route_generator/resources/views/error_page.dart';
+import 'package:route_generator/resources/views/home_page.dart';
+import 'package:route_generator/resources/views/login.dart';
+import 'package:route_generator/resources/views/signup.dart';
 import 'package:route_generator/route/route_names.dart';
-import 'package:route_generator/screens/content_a.dart';
-import 'package:route_generator/screens/content_b.dart';
-import 'package:route_generator/screens/dashboard.dart';
-import 'package:route_generator/screens/error_page.dart';
-import 'package:route_generator/screens/home_page.dart';
-import 'package:route_generator/screens/login.dart';
-import 'package:route_generator/screens/signup.dart';
+
 
 class AppRoutes {
   Route<dynamic> generateRoute(RouteSettings settings) {

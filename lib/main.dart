@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:route_generator/layouts/guest_layout.dart';
+import 'package:route_generator/resources/layouts/guest_layout.dart';
 import 'package:route_generator/route/app_routes.dart';
 import 'package:route_generator/route/route_names.dart';
-import 'package:route_generator/screens/home_page.dart';
+
 
 void main() {
   runApp(MyApp());

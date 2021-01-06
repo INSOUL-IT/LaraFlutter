@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:route_generator/route/app_routes.dart';
+import 'package:route_generator/resources/views/content_a.dart';
+import 'package:route_generator/resources/views/content_b.dart';
 import 'package:route_generator/route/route_names.dart';
-import 'package:route_generator/screens/content_a.dart';
-import 'package:route_generator/screens/content_b.dart';
-import 'package:route_generator/screens/home_page.dart';
+
 
 class GuestLayout extends StatefulWidget {
   @override
