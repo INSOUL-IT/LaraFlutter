@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:route_generator/route/route_names.dart';
+import 'package:lara_flutter/routes/route_names.dart';
 
 class DashboardPage extends StatelessWidget {
   @override

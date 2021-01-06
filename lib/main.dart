@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:route_generator/resources/layouts/guest_layout.dart';
-import 'package:route_generator/route/app_routes.dart';
-import 'package:route_generator/route/route_names.dart';
+import 'package:lara_flutter/resources/layouts/guest_layout.dart';
+import 'package:lara_flutter/routes/app_routes.dart';
+import 'package:lara_flutter/routes/route_names.dart';
+import 'package:lara_flutter/routes/route_names.dart';
 
 
 void main() {

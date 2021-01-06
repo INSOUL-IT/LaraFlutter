@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 
-import 'package:route_generator/app/controllers/login_controller.dart';
-import 'package:route_generator/app/middleware/auth_middleware.dart';
-import 'package:route_generator/resources/views/content_a.dart';
-import 'package:route_generator/resources/views/content_b.dart';
-import 'package:route_generator/resources/views/dashboard.dart';
-import 'package:route_generator/resources/views/error_page.dart';
-import 'package:route_generator/resources/views/home_page.dart';
-import 'package:route_generator/resources/views/login.dart';
-import 'package:route_generator/resources/views/signup.dart';
-import 'package:route_generator/route/route_names.dart';
+import 'package:lara_flutter/app/controllers/login_controller.dart';
+import 'package:lara_flutter/app/middleware/auth_middleware.dart';
+import 'package:lara_flutter/resources/views/content_a.dart';
+import 'package:lara_flutter/resources/views/content_b.dart';
+import 'package:lara_flutter/resources/views/dashboard.dart';
+import 'package:lara_flutter/resources/views/error_page.dart';
+import 'package:lara_flutter/resources/views/home_page.dart';
+import 'package:lara_flutter/resources/views/login.dart';
+import 'package:lara_flutter/resources/views/signup.dart';
+import 'package:lara_flutter/routes/route_names.dart';
 
 
 class AppRoutes {

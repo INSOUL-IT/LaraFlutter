@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:route_generator/route/route_names.dart';
+import 'package:lara_flutter/routes/route_names.dart';
 
 class HomePage extends StatelessWidget {
   final List<Map<String, dynamic>> myMap = [

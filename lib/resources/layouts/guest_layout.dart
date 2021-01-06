@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:route_generator/resources/views/content_a.dart';
-import 'package:route_generator/resources/views/content_b.dart';
-import 'package:route_generator/route/route_names.dart';
+import 'package:lara_flutter/resources/views/content_a.dart';
+import 'package:lara_flutter/resources/views/content_b.dart';
+import 'package:lara_flutter/routes/route_names.dart';
 
 
 class GuestLayout extends StatefulWidget {
