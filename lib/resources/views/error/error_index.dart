@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-class ContentA extends StatelessWidget {
+class ErrorIndex extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Text('Content A'),
+    return Container(
+      child: Text("Home Page"),
     );
   }
 }

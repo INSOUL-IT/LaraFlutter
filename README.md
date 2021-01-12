@@ -1,4 +1,4 @@
-# route_generator
+# lara_flutter
 
 A new Flutter project.
 
