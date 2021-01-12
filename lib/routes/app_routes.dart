@@ -17,8 +17,8 @@ class AppRoutes {
         return _go(HomeController().index());
 
 
-
-
+      default:
+        return _go(ErrorIndex());
     }
 
 
