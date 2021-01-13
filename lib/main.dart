@@ -1,9 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'app/states/counter_state.dart';
 import 'routes/route_names.dart';
 import 'routes/app_routes.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(
+    MultiProvider(
+      providers: [
+         ChangeNotifierProvider(create: (context) => CounterState()),
+        //Provider(create: (context) => CounterState()),
+      ],
+      child: MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {

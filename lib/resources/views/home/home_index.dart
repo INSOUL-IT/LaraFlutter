@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lara_flutter/resources/layouts/app_layout.dart';
+import 'package:lara_flutter/resources/views/counter/counter_index.dart';
+
 class HomeIndex extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -25,6 +27,10 @@ class HomeIndex extends StatelessWidget {
             backgroundColor: Colors.amber,
             minHeight: 10,
           ),
+          SizedBox(
+            height: 100,
+          ),
+          CounterIndex(),
         ],
       ),
     );

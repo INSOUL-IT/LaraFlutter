@@ -12,7 +12,7 @@ class DrawerIndex extends StatelessWidget {
             child: Column(
               children: [
                 Container(
-                  child: Center(child: Image.asset('assets/images/logo.jpg')),
+                  child: Center(child: Image.asset('assets/images/logo.png')),
                   height: 120,
                 ),
               ],
