@@ -1,32 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:lara_flutter/app/states/counter_state.dart';
-import 'package:provider/provider.dart';
+import 'package:lara_flutter/resources/layouts/app_layout.dart';
+import 'package:lara_flutter/resources/views/counter/components/counter_consumer.dart';
 
 class CounterIndex extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Consumer<CounterState>(
-      builder: (context, counterInstance , child) {
-        return Column(
-          children: [
-            Text("Counter : ${counterInstance.getCounter()} "),
-            SizedBox(
-              height: 10,
-            ),
-            RaisedButton(
-              child: Text("+"),
-              onPressed: () => counterInstance.addOne(),
-            ) ,
-            SizedBox(
-              height: 10,
-            ),
-            RaisedButton(
-              child: Text("-"),
-              onPressed: () => counterInstance.subtractOne(),
-            )
-          ],
-        );
-      },
+    return AppLayout(
+      view: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          CounterConsumer(),
+        ],
+      ),
     );
   }
 }

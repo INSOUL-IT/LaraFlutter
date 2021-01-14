@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lara_flutter/config/constants/constants.dart';
-import 'package:lara_flutter/resources/widgets/nav/drawer_index.dart';
+import 'package:lara_flutter/resources/includes/right_drawer.dart';
 
 class AppLayout extends StatelessWidget {
   final Widget view;
@@ -11,7 +11,7 @@ class AppLayout extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     return SafeArea(
       child: Scaffold(
-        endDrawer: DrawerIndex(),
+        endDrawer: RightDrawer(),
         appBar: AppBar(
           title: Center(
             child: Text(

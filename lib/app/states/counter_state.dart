@@ -4,6 +4,8 @@ class CounterState extends ChangeNotifier{
 
   int _counter = 0;
 
+  int get counter => _counter;
+
   void addOne() {
     _counter ++;
     notifyListeners();
@@ -14,7 +16,4 @@ class CounterState extends ChangeNotifier{
     notifyListeners();
   }
 
-  int getCounter(){
-    return _counter;
-  }
 }

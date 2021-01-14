@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lara_flutter/resources/layouts/app_layout.dart';
+import 'package:lara_flutter/resources/views/counter/components/counter_consumer.dart';
 import 'package:lara_flutter/resources/views/counter/counter_index.dart';
 
 class HomeIndex extends StatelessWidget {
@@ -30,7 +31,7 @@ class HomeIndex extends StatelessWidget {
           SizedBox(
             height: 100,
           ),
-          CounterIndex(),
+          CounterConsumer(),
         ],
       ),
     );
