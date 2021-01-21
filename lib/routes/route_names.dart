@@ -6,3 +6,4 @@ const String splash = '/splash';
 
 
 const String counterIndex = "/counter";
+const String apiProvider = "/api-provider";

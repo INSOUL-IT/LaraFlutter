@@ -20,6 +20,9 @@ class AppRoutes {
       case counterIndex:
         return _go(CounterController().index());
 
+      case apiProvider:
+        return _go(HomeController().movie());
+
       default:
         return _go(ErrorIndex());
     }

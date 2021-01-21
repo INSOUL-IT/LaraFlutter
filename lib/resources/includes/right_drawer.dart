@@ -40,12 +40,10 @@ class RightDrawer extends StatelessWidget {
               ListTile(
                 leading: Icon(Icons.speed),
                 title: Text(
-                  'Seeds',
+                  'Api Providers',
                   style: kDrawerListTileTextStyle,
                 ),
-                onTap: () {
-
-                },
+                onTap: () => Navigator.pushNamed(context, apiProvider),
               ),
               ListTile(
                 leading: Icon(Icons.language),
