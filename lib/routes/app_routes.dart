@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lara_flutter/app/controllers/counter_controller.dart';
 import 'package:lara_flutter/app/controllers/home_controller.dart';
+import 'package:lara_flutter/app/controllers/post_controller.dart';
 import 'package:lara_flutter/resources/views/error/error_index.dart';
 import 'package:lara_flutter/routes/route_names.dart';
 
@@ -19,6 +20,12 @@ class AppRoutes {
 
       case counterIndex:
         return _go(CounterController().index());
+
+      case apiProvider:
+        return _go(HomeController().movie());
+
+      case postIndex:
+        return _go(PostController().index());
 
       default:
         return _go(ErrorIndex());

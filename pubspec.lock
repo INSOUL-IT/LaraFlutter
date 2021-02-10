@@ -67,6 +67,20 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  http:
+    dependency: "direct main"
+    description:
+      name: http
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.12.2"
+  http_parser:
+    dependency: transitive
+    description:
+      name: http_parser
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "3.1.4"
   matcher:
     dependency: transitive
     description:
@@ -80,8 +94,7 @@ packages:
       name: meta
       url: "https://pub.dartlang.org"
     source: hosted
-<<<<<<< HEAD
-    version: "1.3.0-nullsafety.6"
+    version: "1.3.0-nullsafety.3"
   nested:
     dependency: transitive
     description:
@@ -89,27 +102,27 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.0.4"
-=======
-    version: "1.3.0-nullsafety.3"
->>>>>>> c6906cfd9c5244484d12d0558e4889bc5984fdcf
   path:
     dependency: transitive
     description:
       name: path
       url: "https://pub.dartlang.org"
     source: hosted
-<<<<<<< HEAD
-    version: "1.8.0-nullsafety.3"
+    version: "1.8.0-nullsafety.1"
+  pedantic:
+    dependency: transitive
+    description:
+      name: pedantic
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.9.2"
   provider:
     dependency: "direct main"
     description:
       name: provider
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "4.3.2+3"
-=======
-    version: "1.8.0-nullsafety.1"
->>>>>>> c6906cfd9c5244484d12d0558e4889bc5984fdcf
+    version: "4.3.2+4"
   sky_engine:
     dependency: transitive
     description: flutter
@@ -172,6 +185,5 @@ packages:
     source: hosted
     version: "2.1.0-nullsafety.3"
 sdks:
-  dart: ">=2.12.0-0.0 <3.0.0"
-  flutter: ">=1.16.0"
-
+  dart: ">=2.10.0-110 <2.11.0"
+  flutter: ">=1.16.0 <2.0.0"
