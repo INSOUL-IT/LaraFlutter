@@ -45,6 +45,16 @@ class RightDrawer extends StatelessWidget {
                 ),
                 onTap: () => Navigator.pushNamed(context, apiProvider),
               ),
+
+              ListTile(
+                leading: Icon(Icons.speed),
+                title: Text(
+                  'Posts',
+                  style: kDrawerListTileTextStyle,
+                ),
+                onTap: () => Navigator.pushNamed(context, postIndex),
+              ),
+
               ListTile(
                 leading: Icon(Icons.language),
                 title: Text(

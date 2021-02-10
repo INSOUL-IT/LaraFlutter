@@ -1,5 +1,3 @@
-
-
 import 'api_base_helper.dart';
 import 'movie_response.dart';
 

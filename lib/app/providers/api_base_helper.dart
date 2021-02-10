@@ -7,7 +7,8 @@ import 'app_exceptions.dart';
 
 class ApiBaseHelper {
 
-  final String _baseUrl = "http://api.themoviedb.org/3/";
+  // final String _baseUrl = "http://api.themoviedb.org/3/";
+  final String _baseUrl = "https://jsonplaceholder.typicode.com";
 
   Future<dynamic> get(String url) async {
     var responseJson;
@@ -24,7 +25,6 @@ class ApiBaseHelper {
     switch (response.statusCode) {
       case 200:
         var responseJson = json.decode(response.body.toString());
-        print(responseJson);
         return responseJson;
       case 400:
         throw BadRequestException(response.body.toString());
