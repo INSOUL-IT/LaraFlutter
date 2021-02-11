@@ -9,3 +9,4 @@ const String counterIndex = "/counter";
 const String apiProvider = "/api-provider";
 
 const String postIndex = "/posts";
+const String postShow = "/posts/1";
