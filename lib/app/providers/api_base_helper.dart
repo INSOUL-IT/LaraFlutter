@@ -24,12 +24,12 @@ class ApiBaseHelper {
   dynamic _returnResponse(http.Response response) {
     switch (response.statusCode) {
       case 200:
-        return json.decode(response.body.toString());
+        return json.decode(response.body);
       case 400:
-        throw BadRequestException(response.body.toString());
+        throw BadRequestException(response.body);
       case 401:
       case 403:
-        throw UnauthorisedException(response.body.toString());
+        throw UnauthorisedException(response.body);
       case 500:
       default:
         throw FetchDataException('Error occured while Communication with Server with StatusCode : ${response.statusCode}');

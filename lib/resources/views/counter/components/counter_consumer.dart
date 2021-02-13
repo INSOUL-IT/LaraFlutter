@@ -13,14 +13,14 @@ class CounterConsumer extends StatelessWidget {
             SizedBox(
               height: 10,
             ),
-            RaisedButton(
+            ElevatedButton(
               child: Text("+"),
               onPressed: () => counterInstance.addOne(),
             ) ,
             SizedBox(
               height: 10,
             ),
-            RaisedButton(
+            ElevatedButton(
               child: Text("-"),
               onPressed: () => counterInstance.subtractOne(),
             )

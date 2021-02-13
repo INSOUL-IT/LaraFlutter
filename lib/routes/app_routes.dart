@@ -27,6 +27,9 @@ class AppRoutes {
       case postIndex:
         return _go(PostController().index());
 
+      case postShow:
+        return _go(PostController().show());
+
       default:
         return _go(ErrorIndex());
     }
