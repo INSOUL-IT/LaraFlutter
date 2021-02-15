@@ -1,9 +1,6 @@
-import 'dart:convert';
-
+import 'package:flutter/cupertino.dart';
 import 'package:lara_flutter/app/models/post.dart';
 import 'package:lara_flutter/app/providers/api_base_helper.dart';
-import 'package:lara_flutter/app/providers/movie_response.dart';
-import 'package:http/http.dart' as http;
 import 'package:lara_flutter/app/states/post_state.dart';
 
 class PostRepository {
@@ -11,9 +8,10 @@ class PostRepository {
   final String _urlShow = "/posts/1";
 
 
-  Future<void> fetchPost() async {
+  Future<Post> fetchPost() async {
     final response = await ApiBaseHelper().get(_urlShow);
-    PostState().setPost(Post.fromJson(response));
+    Post post = Post.fromJson(response);
+    return post;
   }
 
    Future<void> fetchAllPost() async {

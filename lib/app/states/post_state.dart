@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lara_flutter/app/models/post.dart';
+import 'package:lara_flutter/app/repositories/post_repository.dart';
 
 class PostState extends ChangeNotifier{
 
@@ -13,10 +14,8 @@ class PostState extends ChangeNotifier{
     posts.add(post);
   }
 
-  void setPost(Post post){
-    print(post.title);
-    _post = post;
-    print(_post.title);
+  void getPost() async{
+    _post = await PostRepository().fetchPost();
     notifyListeners();
   }
 
