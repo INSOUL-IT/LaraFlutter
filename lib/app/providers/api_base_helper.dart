@@ -2,13 +2,14 @@ import 'dart:io';
 import 'dart:convert';
 import 'dart:async';
 import 'package:http/http.dart' as http;
+import 'package:lara_flutter/config/url/url.dart';
 
 import 'app_exceptions.dart';
 
 class ApiBaseHelper {
 
   // final String _baseUrl = "http://api.themoviedb.org/3/";
-  final String _baseUrl = "https://jsonplaceholder.typicode.com";
+  final String _baseUrl = apiBaseUrl;
 
   Future<dynamic> get(String url) async {
     var responseJson;

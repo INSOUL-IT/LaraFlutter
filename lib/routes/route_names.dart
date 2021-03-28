@@ -10,3 +10,7 @@ const String apiProvider = "/api-provider";
 
 const String postIndex = "/posts";
 const String postShow = "/posts/2";
+
+
+const String userIndex = "/users";
+const String userShow = "/users/5";

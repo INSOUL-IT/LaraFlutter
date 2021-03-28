@@ -63,6 +63,15 @@ class RightDrawer extends StatelessWidget {
                 ),
                 onTap: () => Navigator.pushNamed(context, postShow),
               ),
+
+              ListTile(
+                leading: Icon(Icons.usb),
+                title: Text(
+                  'User',
+                  style: kDrawerListTileTextStyle,
+                ),
+                onTap: () => Navigator.pushNamed(context, userIndex),
+              ),
             ],
           ),
         ],

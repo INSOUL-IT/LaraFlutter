@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:lara_flutter/app/controllers/counter_controller.dart';
 import 'package:lara_flutter/app/controllers/home_controller.dart';
 import 'package:lara_flutter/app/controllers/post_controller.dart';
+import 'package:lara_flutter/modules/user/controllers/user_controller.dart';
 import 'package:lara_flutter/resources/views/error/error_index.dart';
 import 'package:lara_flutter/routes/route_names.dart';
 
@@ -16,7 +17,8 @@ class AppRoutes {
     switch (settings.name) {
 
       case homeRoute:
-        return _go(HomeController().index());
+        return _go(UserController().index());
+        // return _go(HomeController().index());
 
       case counterIndex:
         return _go(CounterController().index());
@@ -29,6 +31,12 @@ class AppRoutes {
 
       case postShow:
         return _go(PostController().show());
+
+      case userIndex:
+        return _go(UserController().index());
+
+      case userShow:
+        return _go(UserController().show());
 
       default:
         return _go(ErrorIndex());
