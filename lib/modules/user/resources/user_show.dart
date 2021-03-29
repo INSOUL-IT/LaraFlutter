@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lara_flutter/modules/user/resources/components/user_consumer.dart';
+import 'package:lara_flutter/modules/user/resources/components/user_show_consumer.dart';
 import 'package:lara_flutter/resources/layouts/app_layout.dart';
 
 class UserShow extends StatelessWidget {
@@ -12,7 +12,7 @@ class UserShow extends StatelessWidget {
         children: [
           Text("User Details"),
           SizedBox(height: 50,),
-          UserConsumer(),
+          UserShowConsumer(),
         ],
       ),
     ));

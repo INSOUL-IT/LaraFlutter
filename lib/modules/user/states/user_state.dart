@@ -5,7 +5,12 @@ import 'package:lara_flutter/modules/user/repositories/UserRepository.dart';
 
 class UserState extends ChangeNotifier{
 
-  List<UserModel> users = [];
+  List<UserModel> _users = [];
+  List<UserModel> get users =>  _users;
+
+  void addUser (UserModel user){
+    _users.add(user);
+  }
 
   UserModel _user;
   UserModel get user =>  _user;
@@ -15,6 +20,12 @@ class UserState extends ChangeNotifier{
     _user = await UserRepository().fetchUser();
     notifyListeners();
   }
+
+  void getAllUser() async {
+    _users = await UserRepository().fetchAllUser();
+    notifyListeners();
+  }
+
 
 
 }

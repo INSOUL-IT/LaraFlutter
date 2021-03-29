@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lara_flutter/modules/user/resources/components/user_index_consumer.dart';
 import 'package:lara_flutter/resources/layouts/app_layout.dart';
 import 'package:lara_flutter/routes/route_names.dart';
 
@@ -10,16 +11,20 @@ class UserIndex extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text("User Index Page"),
+            Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: Text(
+                "Users",
+                style: TextStyle(fontSize: 30.0),
+              ),
+            ),
             SizedBox(
               height: 30,
             ),
-            OutlinedButton(
-              onPressed: () {
-                Navigator.pushNamed(context, userShow);
-              },
-              child: Text("User Show"),
-            )
+            UserIndexConsumer(),
+            SizedBox(
+              height: 30,
+            ),
           ],
         ),
       ),

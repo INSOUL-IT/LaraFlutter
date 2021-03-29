@@ -13,22 +13,20 @@ class UserRepository {
     return user;
   }
 
-  // Future<void> fetchAllUser() async {
-  //   List<dynamic> response = await ApiBaseHelper().get(_urlIndex);
-  //   print("----------------------------------------------------");
-  //   //response.forEach( (element) => print(element) );
-  //
-  //   for(int i = 0 ; i < response.length ; i++){
-  //     print(Post.fromJson(response[i]));
-  //     PostState().addPost(Post.fromJson(response[i]));
-  //     print("----------------------------------------------------");
-  //   }
-  //   print(response.length);
-  //   //print(response[0]);
-  //   //var a = Post.fromJson(response);
-  //   //print(response);
-  //   print("----------------------------------------------------");
-  //   //return response;
-  // }
+
+
+  Future<List<UserModel>> fetchAllUser() async {
+
+    final response = await ApiBaseHelper().get(userIndex);
+    var extractedResponse = response["data"];
+
+    List<UserModel> users = [];
+
+    for(int i = 0 ; i < extractedResponse.length ; i++){
+      users.add(UserModel.fromJson(extractedResponse[i]));
+    }
+
+    return users;
+  }
 
 }
