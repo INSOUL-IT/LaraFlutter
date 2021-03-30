@@ -9,7 +9,8 @@ class UserController  {
   }
 
 
-  Widget show() {
+  Widget show(int id) {
+    print (id);
     return UserShow();
   }
 }

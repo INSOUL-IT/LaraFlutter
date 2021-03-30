@@ -10,6 +10,8 @@ import 'package:lara_flutter/routes/route_names.dart';
 class AppRoutes {
   Route<dynamic> generateRoute(RouteSettings settings) {
 
+    Map arg = settings.arguments;
+
     PageRoute _go(Widget child) {
       return MaterialPageRoute(builder: (context) => child);
     }
@@ -36,7 +38,7 @@ class AppRoutes {
         return _go(UserController().index());
 
       case userShow:
-        return _go(UserController().show());
+        return _go(UserController().show(arg['id']));
 
       default:
         return _go(ErrorIndex());
@@ -47,3 +49,5 @@ class AppRoutes {
 
 
 }
+
+

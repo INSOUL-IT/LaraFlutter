@@ -53,6 +53,7 @@ class UserIndexConsumer extends StatelessWidget {
                               ),
                             ]),
                           ]),
+
                           for (int i = 0; i < stateInstance.users.length; i++)
                             TableRow(children: [
                               Column(children: [
@@ -74,7 +75,8 @@ class UserIndexConsumer extends StatelessWidget {
                                       icon: const Icon(Icons.skip_next_rounded),
                                       tooltip: 'Show',
                                       onPressed: () {
-                                        Navigator.pushNamed(context, userShow);
+                                        // Navigator.pushNamed(context, userShow);
+                                        Navigator.pushNamed(context, userShow ,arguments: {'id': stateInstance.users[i].id});
                                       },
                                     ),
                                     SizedBox(width: 8.0,),
