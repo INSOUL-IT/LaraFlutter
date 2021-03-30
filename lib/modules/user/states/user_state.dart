@@ -16,8 +16,11 @@ class UserState extends ChangeNotifier{
   UserModel get user =>  _user;
 
 
+  int selectedUserId ;
+
+
   void getUser() async{
-    _user = await UserRepository().fetchUser();
+    _user = await UserRepository().fetchUser(selectedUserId);
     notifyListeners();
   }
 

@@ -7,8 +7,9 @@ import 'package:lara_flutter/routes/route_names.dart';
 
 class UserRepository {
 
-  Future<UserModel> fetchUser() async {
-    final response = await ApiBaseHelper().get(userShow);
+  Future<UserModel> fetchUser(int id) async {
+    String path = userShow+id.toString();
+    final response = await ApiBaseHelper().get(path);
     UserModel user = UserModel.fromJson(response['data']);
     return user;
   }

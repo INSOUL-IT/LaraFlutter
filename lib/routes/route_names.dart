@@ -13,4 +13,4 @@ const String postShow = "/posts/2";
 
 
 const String userIndex = "/users";
-const String userShow = "/users/5";
+const String userShow = "/users/";

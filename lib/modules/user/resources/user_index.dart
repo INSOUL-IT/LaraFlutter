@@ -7,26 +7,20 @@ class UserIndex extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AppLayout(
-      view: Container(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Padding(
-              padding: const EdgeInsets.all(20.0),
-              child: Text(
-                "Users",
-                style: TextStyle(fontSize: 30.0),
-              ),
+      view: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: Text(
+              "Users",
+              style: TextStyle(fontSize: 30.0),
             ),
-            SizedBox(
-              height: 30,
-            ),
-            UserIndexConsumer(),
-            SizedBox(
-              height: 30,
-            ),
-          ],
-        ),
+          ),
+
+          UserIndexConsumer(),
+
+        ],
       ),
     );
   }

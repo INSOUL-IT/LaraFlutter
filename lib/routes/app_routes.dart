@@ -38,7 +38,7 @@ class AppRoutes {
         return _go(UserController().index());
 
       case userShow:
-        return _go(UserController().show(arg['id']));
+        return _go(UserController().show());
 
       default:
         return _go(ErrorIndex());

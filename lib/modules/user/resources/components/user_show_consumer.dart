@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lara_flutter/modules/user/resources/components/user_card.dart';
 import 'package:lara_flutter/modules/user/states/user_state.dart';
 
 import 'package:provider/provider.dart';
@@ -16,9 +17,11 @@ class UserShowConsumer extends StatelessWidget {
           children: [
             userInstance.user == null ? Text("Loading...") : Column(
               children: [
-                Text("${userInstance.user.name}"),
-                SizedBox(height: 20,),
-                Text("${userInstance.user.email}"),
+                UserCard(
+                  id: userInstance.user.id,
+                  name: userInstance.user.name,
+                  email: userInstance.user.email,
+                ),
               ],
             ),
           ],
