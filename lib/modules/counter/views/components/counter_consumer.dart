@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lara_flutter/modules/counter/counter_state.dart';
+import 'package:lara_flutter/modules/counter/states/counter_state.dart';
 import 'package:provider/provider.dart';
 
 class CounterConsumer extends StatelessWidget {

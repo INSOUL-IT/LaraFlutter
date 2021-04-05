@@ -10,7 +10,6 @@ const kDrawerListTileTextStyle = TextStyle(
   fontWeight: FontWeight.w400,
 );
 
-
 /*Category Design Constants*/
 const kCategoryButtonColor = Colors.white;
 const kCategoryButtonTextColor = Colors.black;
@@ -21,7 +20,7 @@ const kCategoryButtonTextStyle = TextStyle(
   color: kCategoryButtonTextColor,
 );
 
-
-
 /*Seed Index Card Design Constants*/
 const kSeedIndexCardBgColor = Colors.white;
+
+const kDefaultPadding = 20.0;

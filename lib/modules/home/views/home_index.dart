@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lara_flutter/modules/counter/views/components/counter_consumer.dart';
-import 'package:lara_flutter/modules/layout/app_layout.dart';
+import 'package:lara_flutter/modules/layout/views/app_layout.dart';
+import 'package:lara_flutter/routes/route_names.dart';
 
 class HomeIndex extends StatelessWidget {
   @override
@@ -28,7 +29,26 @@ class HomeIndex extends StatelessWidget {
             minHeight: 10,
           ),
           SizedBox(
-            height: 100,
+            height: 30,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              ElevatedButton(
+                onPressed: () => Navigator.pushNamed(context, dashboard),
+                child: Text("Dashboard"),
+              ),
+              SizedBox(
+                width: 20,
+              ),
+              ElevatedButton(
+                onPressed: () => Navigator.pushNamed(context, counterIndex),
+                child: Text("Counter"),
+              ),
+            ],
+          ),
+          SizedBox(
+            height: 30,
           ),
           CounterConsumer(),
         ],

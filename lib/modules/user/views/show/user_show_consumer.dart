@@ -17,10 +17,13 @@ class UserShowConsumer extends StatelessWidget {
                 ? Text("Loading...")
                 : Column(
                     children: [
-                      UserCard(
-                        id: userInstance.user.id,
-                        name: userInstance.user.name,
-                        email: userInstance.user.email,
+                      Container(
+                        width: 600,
+                        child: UserCard(
+                          id: userInstance.user.id,
+                          name: userInstance.user.name,
+                          email: userInstance.user.email,
+                        ),
                       ),
                     ],
                   ),

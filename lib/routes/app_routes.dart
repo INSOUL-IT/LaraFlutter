@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:lara_flutter/modules/counter/counter_controller.dart';
+import 'package:lara_flutter/modules/counter/controllers/counter_controller.dart';
+import 'package:lara_flutter/modules/dashboard/controllers/dashboard_controller.dart';
 import 'package:lara_flutter/modules/error/error.dart';
-import 'package:lara_flutter/modules/home/home_controller.dart';
 import 'package:lara_flutter/modules/user/controllers/user_controller.dart';
 import 'package:lara_flutter/routes/route_names.dart';
 
@@ -17,6 +17,9 @@ class AppRoutes {
       case homeRoute:
         return _go(UserController().index());
       // return _go(HomeController().index());
+
+      case dashboard:
+        return _go(DashboardController().index());
 
       case counterIndex:
         return _go(CounterController().index());

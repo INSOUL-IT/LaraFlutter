@@ -16,6 +16,7 @@ class UserListCard extends StatelessWidget {
     return Consumer<UserState>(
       builder: (context, stateInstance, child) {
         return Card(
+          margin: EdgeInsets.all(16),
           elevation: 5,
           clipBehavior: Clip.antiAlias,
           shape: RoundedRectangleBorder(
@@ -31,15 +32,16 @@ class UserListCard extends StatelessWidget {
               ListTile(
                 leading: Padding(
                   padding: const EdgeInsets.all(16.0),
-                  child: Image.network(
-                      'https://res.cloudinary.com/dtbudl0yx/image/fetch/w_2000,f_auto,q_auto,c_fit/https://adamtheautomator.com/wp-content/uploads/2019/10/user-1633249_1280-768x749.png'),
+                  child: Icon(Icons.account_circle),
                 ),
                 title: Text(
                   name,
+                  overflow: TextOverflow.ellipsis,
                   style: TextStyle(color: Colors.black),
                 ),
                 subtitle: Text(
                   email,
+                  overflow: TextOverflow.ellipsis,
                   style: TextStyle(color: Colors.black),
                 ),
                 trailing: PopupMenuButton(

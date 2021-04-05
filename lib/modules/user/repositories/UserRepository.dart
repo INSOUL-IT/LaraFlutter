@@ -1,4 +1,4 @@
-import 'package:lara_flutter/app/providers/api_base_helper.dart';
+import 'package:lara_flutter/helpers/api/api_base_helper.dart';
 import 'package:lara_flutter/modules/user/models/user_model.dart';
 import 'package:lara_flutter/routes/route_names.dart';
 
