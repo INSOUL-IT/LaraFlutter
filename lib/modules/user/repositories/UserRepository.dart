@@ -29,4 +29,10 @@ class UserRepository {
     final response = await ApiBaseHelper().delete(path);
     return response == 1 ? true : false;
   }
+
+  Future<dynamic> createUser(Map information) async {
+    String path = "/users/";
+    final response = await ApiBaseHelper().create(path, information);
+    return response;
+  }
 }

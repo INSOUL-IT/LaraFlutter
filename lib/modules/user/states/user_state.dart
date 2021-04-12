@@ -25,11 +25,32 @@ class UserState extends ChangeNotifier {
     notifyListeners();
   }
 
-  // delete operation
+  // delete user operation
   bool deleteStatus = false;
 
   void deleteUser() async {
     deleteStatus = await UserRepository().fetchDeletedUser(selectedUserId);
     notifyListeners();
+  }
+
+  // create user operation
+  Map<dynamic, dynamic> _userInformation = {
+    "name": "fdgdfg",
+    "email": "",
+    "password": "",
+    "password_confirmation": "",
+  };
+
+  void setUserName(String name) {
+    _userInformation["name"] = name;
+    notifyListeners();
+  }
+
+  Map<dynamic, dynamic> get userInformation => _userInformation;
+
+  void createUser() async {
+    print(_userInformation);
+    var response = await UserRepository().createUser(_userInformation);
+    // print(response);
   }
 }

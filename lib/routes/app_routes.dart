@@ -30,6 +30,9 @@ class AppRoutes {
       case userShow:
         return _go(UserController().show());
 
+      case userCreate:
+        return _go(UserController().create());
+
       case userDelete:
         return _go(UserController().delete());
 

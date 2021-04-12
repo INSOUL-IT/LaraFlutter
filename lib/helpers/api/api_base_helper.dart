@@ -1,6 +1,7 @@
-import 'dart:io';
-import 'dart:convert';
 import 'dart:async';
+import 'dart:convert';
+import 'dart:io';
+
 import 'package:http/http.dart' as http;
 import 'package:lara_flutter/config/url/url.dart';
 
@@ -18,6 +19,25 @@ class ApiBaseHelper {
     } on SocketException {
       throw FetchDataException('No Internet connection');
     }
+    return responseJson;
+  }
+
+  // api create method
+  Future<dynamic> create(String url, Map bodyRaw) async {
+    var responseJson;
+    try {
+      final response = await http.post(
+        _baseUrl + "$url",
+        headers: <String, String>{
+          'Content-Type': 'application/json; charset=UTF-8',
+        },
+        body: jsonEncode(bodyRaw),
+      );
+      responseJson = _returnResponse(response);
+    } on SocketDirection {
+      throw FetchDataException('No Internet connection');
+    }
+
     return responseJson;
   }
 
@@ -43,15 +63,20 @@ class ApiBaseHelper {
     switch (response.statusCode) {
       case 200:
         return json.decode(response.body);
+      case 201:
+        return json.decode(response.body);
       case 400:
         throw BadRequestException(response.body);
       case 401:
       case 403:
         throw UnauthorisedException(response.body);
+      case 422:
+        return json.decode(response.body);
+      // throw UnProcessAbleEntityException(response.body);
       case 500:
       default:
         throw FetchDataException(
-            'Error occured while Communication with Server with StatusCode : ${response.statusCode}');
+            'Error occurred while Communication with Server with StatusCode : ${response.statusCode}');
     }
   }
 }
