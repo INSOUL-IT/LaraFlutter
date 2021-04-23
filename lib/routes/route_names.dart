@@ -4,6 +4,7 @@ const String signUp = '/sign-up';
 const String splash = '/splash';
 
 const String dashboard = "/dashboard";
+const String railNavigation = "/navigation-rail";
 const String counterIndex = "/counter";
 
 const String userIndex = "/users";
