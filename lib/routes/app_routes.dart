@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:ii_admin_layout/ii_admin_layout.dart';
 import 'package:lara_flutter/modules/counter/controllers/counter_controller.dart';
 import 'package:lara_flutter/modules/dashboard/controllers/dashboard_controller.dart';
 import 'package:lara_flutter/modules/error/error.dart';
@@ -17,8 +16,9 @@ class AppRoutes {
     switch (settings.name) {
       case homeRoute:
         //return _go(UserController().index());
-        return _go(AdminLayout());
-
+        //return _go(AdminLayout());
+        return _go(DashboardController().index());
+      //return _go(CounterWidget());
       case dashboard:
         return _go(DashboardController().index());
 

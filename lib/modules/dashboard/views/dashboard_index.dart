@@ -1,12 +1,36 @@
 import 'package:flutter/material.dart';
+import 'package:ii_admin_layout/ii_admin_layout.dart';
 import 'package:lara_flutter/modules/home/components/dashboard_info_card.dart';
-import 'package:lara_flutter/modules/layout/views/admin_layout.dart';
 
 class DashboardIndex extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    List<dynamic> sideBarItems = [
+      {
+        'title': 'Dashboard',
+        'icon': Icons.dashboard_sharp,
+      },
+      {
+        'title': 'User',
+        'icon': Icons.person,
+      },
+      {
+        'title': 'Products',
+        'icon': Icons.shopping_bag,
+      },
+      {
+        'title': 'Category',
+        'icon': Icons.category_rounded,
+      },
+      {
+        'title': 'Settings',
+        'icon': Icons.settings,
+      },
+    ];
+
     return AdminLayout(
-      view: Column(
+      sideBarItems: sideBarItems,
+      page: Column(
         // mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Row(

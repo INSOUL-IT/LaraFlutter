@@ -27,6 +27,8 @@ dependencies:
   http: ^0.12.2
   ii_admin_layout:
     path: packages/ii_admin_layout
+  test_provider:
+    path: packages/test_provider
 
 
   # The following adds the Cupertino Icons font to your application.

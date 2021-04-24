@@ -1,6 +1,9 @@
 part of ii_admin_layout;
 
 class SideBar extends StatelessWidget {
+  final List sideBarItems;
+  SideBar({this.sideBarItems});
+
   @override
   Widget build(BuildContext context) {
     return Consumer<AdminLayoutState>(
@@ -26,31 +29,12 @@ class SideBar extends StatelessWidget {
               ? NavigationRailLabelType.none
               : NavigationRailLabelType.selected,
           destinations: [
-            NavigationRailDestination(
-              icon: Icon(Icons.favorite_border),
-              selectedIcon: Icon(Icons.favorite),
-              label: Text('First'),
-            ),
-            NavigationRailDestination(
-              icon: Icon(Icons.bookmark_border),
-              selectedIcon: Icon(Icons.book),
-              label: Text('Second'),
-            ),
-            NavigationRailDestination(
-              icon: Icon(Icons.star_border),
-              selectedIcon: Icon(Icons.star),
-              label: Text('Third'),
-            ),
-            NavigationRailDestination(
-              icon: Icon(Icons.favorite_border),
-              selectedIcon: Icon(Icons.favorite),
-              label: Text('First'),
-            ),
-            NavigationRailDestination(
-              icon: Icon(Icons.favorite_border),
-              selectedIcon: Icon(Icons.favorite),
-              label: Text('First'),
-            ),
+            for (int index = 0; index < sideBarItems.length; index++)
+              NavigationRailDestination(
+                icon: Icon(sideBarItems[index]['icon']),
+                selectedIcon: Icon(sideBarItems[index]['icon']),
+                label: Text(sideBarItems[index]['title']),
+              ),
           ],
         );
       },

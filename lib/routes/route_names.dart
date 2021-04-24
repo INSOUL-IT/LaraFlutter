@@ -7,6 +7,8 @@ const String dashboard = "/dashboard";
 const String railNavigation = "/navigation-rail";
 const String counterIndex = "/counter";
 
+const String testProvider = "/test-provider";
+
 const String userIndex = "/users";
 const String userShow = "/users/show";
 const String userCreate = "/users/create";

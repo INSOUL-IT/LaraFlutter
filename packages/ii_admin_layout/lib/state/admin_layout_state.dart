@@ -23,4 +23,12 @@ class AdminLayoutState with ChangeNotifier {
     _navigationRailExpanded = !_navigationRailExpanded;
     notifyListeners();
   }
+
+  List<dynamic> _sideBarItems = [];
+  List<dynamic> get sidebarItems => _sideBarItems;
+
+  void setSideBarItems(List<dynamic> items) {
+    _sideBarItems = items;
+    notifyListeners();
+  }
 }
