@@ -24,11 +24,20 @@ class AdminLayoutState with ChangeNotifier {
     notifyListeners();
   }
 
-  List<dynamic> _sideBarItems = [];
-  List<dynamic> get sidebarItems => _sideBarItems;
-
-  void setSideBarItems(List<dynamic> items) {
-    _sideBarItems = items;
-    notifyListeners();
-  }
+  // List<dynamic> _sideBarItems = [];
+  // List<dynamic> get sideBarItems => _sideBarItems;
+  //
+  // bool hasSideBarItems() {
+  //   print("called");
+  //   print(_sideBarItems.length);
+  //   if (_sideBarItems == null) {
+  //     return false;
+  //   }
+  //   return true;
+  // }
+  //
+  // void setSideBarItems(List<dynamic> items) {
+  //   _sideBarItems = items;
+  //   notifyListeners();
+  // }
 }

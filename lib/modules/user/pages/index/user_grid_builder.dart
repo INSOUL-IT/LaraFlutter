@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:lara_flutter/helpers/layout/device_type.dart';
 import 'package:lara_flutter/helpers/layout/responsive.dart';
 import 'package:lara_flutter/modules/user/models/user_model.dart';
-import 'package:lara_flutter/modules/user/views/index/user_list_card.dart';
+
+import 'user_list_card.dart';
 
 class UserGridBuilder extends StatelessWidget {
   final List<UserModel> users;

@@ -17,7 +17,7 @@ class AppRoutes {
       case homeRoute:
         //return _go(UserController().index());
         //return _go(AdminLayout());
-        return _go(DashboardController().index());
+        return _go(UserController().index());
       //return _go(CounterWidget());
       case dashboard:
         return _go(DashboardController().index());

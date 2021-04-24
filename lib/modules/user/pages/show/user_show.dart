@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lara_flutter/modules/layout/views/admin_layout.dart';
+import 'package:lara_flutter/modules/layout/types/admin_layout.dart';
 
 import 'user_show_consumer.dart';
 

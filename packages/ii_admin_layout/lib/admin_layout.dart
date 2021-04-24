@@ -11,6 +11,7 @@ class AdminLayout extends StatelessWidget {
       create: (context) => AdminLayoutState(),
       child: Layout(
         sideBarItems: sideBarItems,
+        page: page,
       ),
     );
   }

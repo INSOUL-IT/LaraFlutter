@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:lara_flutter/modules/user/states/user_state.dart';
-import 'package:lara_flutter/modules/user/views/index/user_grid_builder.dart';
 import 'package:provider/provider.dart';
+
+import 'user_grid_builder.dart';
 
 class UserIndexConsumer extends StatelessWidget {
   @override

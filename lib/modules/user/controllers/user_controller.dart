@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:lara_flutter/modules/user/views/create/user_create.dart';
-import 'package:lara_flutter/modules/user/views/delete/user_delete.dart';
-import 'package:lara_flutter/modules/user/views/index/user_index.dart';
-import 'package:lara_flutter/modules/user/views/show/user_show.dart';
+
+import '../pages/create/user_create.dart';
+import '../pages/delete/user_delete.dart';
+import '../pages/index/user_index.dart';
+import '../pages/show/user_show.dart';
 
 class UserController {
   Widget index() {
