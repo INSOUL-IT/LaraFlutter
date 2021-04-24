@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:lara_flutter/modules/home/components/dashboard_info_card.dart';
-import 'package:lara_flutter/modules/layout/types/base_layout.dart';
+import 'package:lara_flutter/modules/layout/types/base_admin_layout.dart';
 
 class DashboardIndex extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return BaseLayout(
+    return BaseAdminLayout(
+      section: "Dashboard",
       page: Column(
         children: [
           Row(

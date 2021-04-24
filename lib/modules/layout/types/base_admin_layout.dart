@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:ii_admin_layout/ii_admin_layout.dart';
 import 'package:lara_flutter/routes/route_names.dart';
 
-class BaseLayout extends StatelessWidget {
+class BaseAdminLayout extends StatelessWidget {
   final Widget page;
-  BaseLayout({this.page});
+  final String section;
+  BaseAdminLayout({this.page, @required this.section});
   @override
   Widget build(BuildContext context) {
     List<dynamic> sideBarItems = [
@@ -36,6 +37,7 @@ class BaseLayout extends StatelessWidget {
     ];
     return AdminLayout(
       sideBarItems: sideBarItems,
+      section: section,
       page: page,
     );
   }

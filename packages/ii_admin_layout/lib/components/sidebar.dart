@@ -2,7 +2,18 @@ part of ii_admin_layout;
 
 class SideBar extends StatelessWidget {
   final List sideBarItems;
-  SideBar({this.sideBarItems});
+  final String section;
+  SideBar({this.sideBarItems, this.section});
+
+  int getSelectedSectionIndex(section) {
+    for (int index = 0; index < sideBarItems.length; index++) {
+      if (sideBarItems[index]['title'] == section) {
+        return index;
+      }
+    }
+    return 0;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Consumer<AdminLayoutState>(
@@ -22,9 +33,9 @@ class SideBar extends StatelessWidget {
           extended: state.navigationRailExpanded,
           backgroundColor: Colors.white10,
           groupAlignment: 0.0,
-          selectedIndex: state.selectedIndex,
+          selectedIndex: getSelectedSectionIndex(section),
           onDestinationSelected: (int index) {
-            state._selectedIndex = index;
+            print(state.selectedIndex);
             Navigator.pushNamed(context, sideBarItems[index]['route']);
           },
           labelType: state.navigationRailExpanded

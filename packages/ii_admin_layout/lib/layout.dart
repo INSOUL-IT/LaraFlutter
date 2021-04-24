@@ -3,7 +3,8 @@ part of ii_admin_layout;
 class Layout extends StatelessWidget {
   final Widget page;
   final List sideBarItems;
-  Layout({this.sideBarItems, this.page});
+  final String section;
+  Layout({this.sideBarItems, this.page, this.section});
 
   @override
   Widget build(BuildContext context) {
@@ -32,6 +33,7 @@ class Layout extends StatelessWidget {
               (state.navigationRail)
                   ? SideBar(
                       sideBarItems: sideBarItems,
+                      section: section,
                     )
                   : Container(),
               VerticalDivider(thickness: 1, width: 1),

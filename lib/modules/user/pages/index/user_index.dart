@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:lara_flutter/modules/layout/types/base_layout.dart';
 import 'package:lara_flutter/routes/route_names.dart';
 
+import '../../../layout/types/base_admin_layout.dart';
 import 'user_index_consumer.dart';
 
 class UserIndex extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return BaseLayout(
+    return BaseAdminLayout(
+      section: "User",
       page: Column(
         // mainAxisAlignment: MainAxisAlignment.center,
         children: [
