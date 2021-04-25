@@ -35,7 +35,7 @@ class UserState extends ChangeNotifier {
 
   // create user operation
   Map<dynamic, dynamic> _userInformation = {
-    "name": "fdgdfg",
+    "name": "",
     "email": "",
     "password": "",
     "password_confirmation": "",
@@ -43,6 +43,21 @@ class UserState extends ChangeNotifier {
 
   void setUserName(String name) {
     _userInformation["name"] = name;
+    notifyListeners();
+  }
+
+  void setUserEmail(String email) {
+    _userInformation["email"] = email;
+    notifyListeners();
+  }
+
+  void setUserPassword(String password) {
+    _userInformation["password"] = password;
+    notifyListeners();
+  }
+
+  void setUserConfirmPassword(String cPassword) {
+    _userInformation["password_confirmation"] = cPassword;
     notifyListeners();
   }
 
