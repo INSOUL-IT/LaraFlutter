@@ -10,6 +10,6 @@ const String counterIndex = "/counter";
 const String testProvider = "/test-provider";
 
 const String userIndex = "/users";
-const String userShow = "/users/show";
+const String userShow = "/users/";
 const String userCreate = "/users/create";
 const String userDelete = "/users/delete";

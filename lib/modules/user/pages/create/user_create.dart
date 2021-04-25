@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lara_flutter/modules/layout/types/admin_layout.dart';
+import 'package:lara_flutter/modules/layout/types/base_admin_layout.dart';
 import 'package:lara_flutter/modules/user/states/user_state.dart';
 import 'package:provider/provider.dart';
 
@@ -20,8 +20,9 @@ class UserCreate extends StatelessWidget {
         cPasswordController.text =
             state.userInformation["password_confirmation"];
 
-        return AdminLayout(
-          view: Container(
+        return BaseAdminLayout(
+          section: "User",
+          page: Container(
             width: 500,
             child: Center(
               child: Form(
