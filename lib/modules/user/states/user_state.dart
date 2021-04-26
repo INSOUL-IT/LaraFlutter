@@ -3,6 +3,12 @@ import 'package:lara_flutter/modules/user/models/user_model.dart';
 import 'package:lara_flutter/modules/user/repositories/UserRepository.dart';
 
 class UserState extends ChangeNotifier {
+  // Index
+  //**************************************************************//
+  //**************************************************************//
+  //**************************************************************//
+  //**************************************************************//
+
   List<UserModel> _users = [];
   List<UserModel> get users => _users;
 
@@ -25,47 +31,35 @@ class UserState extends ChangeNotifier {
     notifyListeners();
   }
 
-  // delete user operation
-  bool deleteStatus = false;
+  // Create
+  //**************************************************************//
+  //**************************************************************//
+  //**************************************************************//
+  //**************************************************************//
 
-  void deleteUser() async {
-    deleteStatus = await UserRepository().fetchDeletedUser(selectedUserId);
-    notifyListeners();
-  }
-
-  // create user operation
-  Map<dynamic, dynamic> _userInformation = {
+  Map<dynamic, dynamic> userInformation = {
     "name": "",
     "email": "",
     "password": "",
     "password_confirmation": "",
   };
 
-  void setUserName(String name) {
-    _userInformation["name"] = name;
-    notifyListeners();
-  }
-
-  void setUserEmail(String email) {
-    _userInformation["email"] = email;
-    notifyListeners();
-  }
-
-  void setUserPassword(String password) {
-    _userInformation["password"] = password;
-    notifyListeners();
-  }
-
-  void setUserConfirmPassword(String cPassword) {
-    _userInformation["password_confirmation"] = cPassword;
-    notifyListeners();
-  }
-
-  Map<dynamic, dynamic> get userInformation => _userInformation;
-
   void createUser() async {
-    print(_userInformation);
-    var response = await UserRepository().createUser(_userInformation);
+    print(userInformation);
+    var response = await UserRepository().createUser(userInformation);
     // print(response);
+  }
+
+  // delete
+  //**************************************************************//
+  //**************************************************************//
+  //**************************************************************//
+  //**************************************************************//
+
+  bool deleteStatus = false;
+
+  void deleteUser() async {
+    deleteStatus = await UserRepository().fetchDeletedUser(selectedUserId);
+    notifyListeners();
   }
 }

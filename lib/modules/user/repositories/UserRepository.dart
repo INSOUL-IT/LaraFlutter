@@ -3,12 +3,11 @@ import 'package:lara_flutter/modules/user/models/user_model.dart';
 import 'package:lara_flutter/routes/route_names.dart';
 
 class UserRepository {
-  Future<UserModel> fetchUser(int id) async {
-    String path = userShow + id.toString();
-    final response = await ApiBaseHelper().get(path);
-    UserModel user = UserModel.fromJson(response['data']);
-    return user;
-  }
+  // Index
+  //**************************************************************//
+  //**************************************************************//
+  //**************************************************************//
+  //**************************************************************//
 
   Future<List<UserModel>> fetchAllUser() async {
     String path = "/users";
@@ -24,15 +23,48 @@ class UserRepository {
     return users;
   }
 
-  Future<bool> fetchDeletedUser(int id) async {
-    String path = "/users/" + id.toString();
-    final response = await ApiBaseHelper().delete(path);
-    return response == 1 ? true : false;
+  // Show
+  //**************************************************************//
+  //**************************************************************//
+  //**************************************************************//
+  //**************************************************************//
+
+  Future<UserModel> fetchUser(int id) async {
+    String path = userShow + id.toString();
+    final response = await ApiBaseHelper().get(path);
+    UserModel user = UserModel.fromJson(response['data']);
+    return user;
   }
+
+  // Create
+  //**************************************************************//
+  //**************************************************************//
+  //**************************************************************//
+  //**************************************************************//
 
   Future<dynamic> createUser(Map information) async {
     String path = "/users/";
     final response = await ApiBaseHelper().create(path, information);
     return response;
+  }
+
+  // Update
+  //**************************************************************//
+  //**************************************************************//
+  //**************************************************************//
+  //**************************************************************//
+
+  Future<dynamic> updateUser(Map information) async {}
+
+  // delete
+  //**************************************************************//
+  //**************************************************************//
+  //**************************************************************//
+  //**************************************************************//
+
+  Future<bool> fetchDeletedUser(int id) async {
+    String path = "/users/" + id.toString();
+    final response = await ApiBaseHelper().delete(path);
+    return response == 1 ? true : false;
   }
 }
