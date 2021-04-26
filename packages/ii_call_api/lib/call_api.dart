@@ -1,46 +1,44 @@
 part of ii_call_api;
 
 class CallApi {
-  final String baseUrl;
-  CallApi({this.baseUrl});
+  //**************************************************************//
+  //**************************************************************//
+  //***************             GET                   ************//
+  //**************************************************************//
+  //**************************************************************//
 
-  // api get method
   Future<dynamic> get(String url) async {
+    var client = http.Client();
+    var parsedUrl = Uri.parse(url);
     var responseJson;
+
     try {
-      final response = await http.get(baseUrl + url);
+      var response = await client.get(parsedUrl);
       responseJson = _returnResponse(response);
     } on SocketException {
       throw FetchDataException('No Internet connection');
+    } finally {
+      client.close();
     }
     return responseJson;
   }
 
   // api create method
+  //**************************************************************//
+  //**************************************************************//
+  //**************            CREATE            ******************//
+  //**************************************************************//
+  //**************************************************************//
+
   Future<dynamic> create(String url, Map bodyRaw) async {
+    var client = http.Client();
+    var parsedUrl = Uri.parse(url);
     var responseJson;
+
     try {
-      final response = await http.post(
-        _baseUrl + "$url",
-        headers: <String, String>{
-          'Content-Type': 'application/json; charset=UTF-8',
-        },
+      var response = await client.post(
+        parsedUrl,
         body: jsonEncode(bodyRaw),
-      );
-      responseJson = _returnResponse(response);
-    } on SocketDirection {
-      throw FetchDataException('No Internet connection');
-    }
-
-    return responseJson;
-  }
-
-  // api delete method
-  Future<dynamic> delete(String url) async {
-    var responseJson;
-    try {
-      final response = await http.delete(
-        _baseUrl + "$url",
         headers: <String, String>{
           'Content-Type': 'application/json; charset=UTF-8',
         },
@@ -48,10 +46,39 @@ class CallApi {
       responseJson = _returnResponse(response);
     } on SocketDirection {
       throw FetchDataException('No Internet connection');
+    } finally {
+      client.close();
+    }
+    return responseJson;
+  }
+
+  //**************************************************************//
+  //**************************************************************//
+  //***************             DELETE                ************//
+  //**************************************************************//
+  //**************************************************************//
+  Future<dynamic> delete(String url) async {
+    var client = http.Client();
+    var parsedUrl = Uri.parse(url);
+    var responseJson;
+
+    try {
+      final response = await client.delete(parsedUrl);
+      responseJson = _returnResponse(response);
+    } on SocketDirection {
+      throw FetchDataException('No Internet connection');
+    } finally {
+      client.close();
     }
 
     return responseJson;
   }
+
+  //**************************************************************//
+  //**************************************************************//
+  //***************          RETURN RESPONSE          ************//
+  //**************************************************************//
+  //**************************************************************//
 
   dynamic _returnResponse(http.Response response) {
     switch (response.statusCode) {
@@ -65,7 +92,8 @@ class CallApi {
       case 403:
         throw UnauthorisedException(response.body);
       case 422:
-        return json.decode(response.body);
+        return response.body;
+      // return json.decode(response.body);
       // throw UnProcessAbleEntityException(response.body);
       case 500:
       default:

@@ -1,3 +1,5 @@
+part of ii_call_api;
+
 class ApiResponse<T> {
   Status status;
 

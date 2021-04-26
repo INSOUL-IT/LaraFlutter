@@ -1,17 +1,20 @@
-import 'package:lara_flutter/helpers/api/api_base_helper.dart';
+import 'package:ii_call_api/ii_call_api.dart';
+import 'package:lara_flutter/config/url/url.dart';
 import 'package:lara_flutter/modules/user/models/user_model.dart';
 import 'package:lara_flutter/routes/route_names.dart';
 
 class UserRepository {
-  // Index
+  final String baseUrl = apiBaseUrl;
+
   //**************************************************************//
   //**************************************************************//
+  //***************             INDEX                 ************//
   //**************************************************************//
   //**************************************************************//
 
   Future<List<UserModel>> fetchAllUser() async {
     String path = "/users";
-    final response = await ApiBaseHelper().get(path);
+    final response = await CallApi().get(path);
     var extractedResponse = response["data"];
 
     List<UserModel> users = [];
@@ -23,48 +26,48 @@ class UserRepository {
     return users;
   }
 
-  // Show
   //**************************************************************//
   //**************************************************************//
+  //***************             SHOW                  ************//
   //**************************************************************//
   //**************************************************************//
 
   Future<UserModel> fetchUser(int id) async {
     String path = userShow + id.toString();
-    final response = await ApiBaseHelper().get(path);
+    final response = await CallApi().get(path);
     UserModel user = UserModel.fromJson(response['data']);
     return user;
   }
 
-  // Create
   //**************************************************************//
   //**************************************************************//
+  //***************             CREATE                ************//
   //**************************************************************//
   //**************************************************************//
 
-  Future<dynamic> createUser(Map information) async {
-    String path = "/users/";
-    final response = await ApiBaseHelper().create(path, information);
+  Future<dynamic> createUser(Map requestBody) async {
+    String path = baseUrl + "/users";
+    final response = await CallApi().create(path, requestBody);
     return response;
   }
 
-  // Update
   //**************************************************************//
   //**************************************************************//
+  //***************             UPDATE                ************//
   //**************************************************************//
   //**************************************************************//
 
   Future<dynamic> updateUser(Map information) async {}
 
-  // delete
   //**************************************************************//
   //**************************************************************//
+  //***************             DELETE                ************//
   //**************************************************************//
   //**************************************************************//
 
   Future<bool> fetchDeletedUser(int id) async {
     String path = "/users/" + id.toString();
-    final response = await ApiBaseHelper().delete(path);
+    final response = await CallApi().delete(path);
     return response == 1 ? true : false;
   }
 }

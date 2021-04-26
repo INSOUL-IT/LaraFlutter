@@ -13,19 +13,14 @@ dependencies:
   flutter:
     sdk: flutter
   provider: ^5.0.0
-  http ^0.13.1
+  http: ^0.13.1
+  cupertino_icons: ^1.0.0
   ii_admin_layout:
     path: packages/ii_admin_layout
   test_provider:
     path: packages/test_provider
   ii_call_api:
     path: packages/ii_call_api
-
-  # The following adds the Cupertino Icons font to your application.
-  # Use with the CupertinoIcons class for iOS style icons.
-  cupertino_icons: ^1.0.0
-  websafe_svg: ^1.1.4+1
-  flutter_staggered_grid_view: ^0.3.3
 
 dev_dependencies:
   flutter_test:

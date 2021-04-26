@@ -3,37 +3,40 @@ import 'package:lara_flutter/modules/user/models/user_model.dart';
 import 'package:lara_flutter/modules/user/repositories/UserRepository.dart';
 
 class UserState extends ChangeNotifier {
-  // Index
   //**************************************************************//
   //**************************************************************//
+  //***************             SHOW                  ************//
   //**************************************************************//
   //**************************************************************//
 
-  List<UserModel> _users = [];
-  List<UserModel> get users => _users;
+  List<UserModel> users = [];
 
-  void addUser(UserModel user) {
-    _users.add(user);
+  void getAllUser() async {
+    users = await UserRepository().fetchAllUser();
+    notifyListeners();
   }
 
-  UserModel _user;
-  UserModel get user => _user;
+  void addUser(UserModel user) {
+    users.add(user);
+  }
 
+  //**************************************************************//
+  //**************************************************************//
+  //***************             SHOW                  ************//
+  //**************************************************************//
+  //**************************************************************//
+
+  UserModel user;
   int selectedUserId;
 
   void getUser() async {
-    _user = await UserRepository().fetchUser(selectedUserId);
+    user = await UserRepository().fetchUser(selectedUserId);
     notifyListeners();
   }
 
-  void getAllUser() async {
-    _users = await UserRepository().fetchAllUser();
-    notifyListeners();
-  }
-
-  // Create
   //**************************************************************//
   //**************************************************************//
+  //***************             CREATE                ************//
   //**************************************************************//
   //**************************************************************//
 
@@ -45,14 +48,13 @@ class UserState extends ChangeNotifier {
   };
 
   void createUser() async {
-    print(userInformation);
     var response = await UserRepository().createUser(userInformation);
-    // print(response);
+    print(response);
   }
 
-  // delete
   //**************************************************************//
   //**************************************************************//
+  //***************             DELETE                ************//
   //**************************************************************//
   //**************************************************************//
 
