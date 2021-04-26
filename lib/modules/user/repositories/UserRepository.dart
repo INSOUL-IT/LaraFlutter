@@ -1,7 +1,6 @@
 import 'package:ii_call_api/ii_call_api.dart';
 import 'package:lara_flutter/config/url/url.dart';
 import 'package:lara_flutter/modules/user/models/user_model.dart';
-import 'package:lara_flutter/routes/route_names.dart';
 
 class UserRepository {
   final String baseUrl = apiBaseUrl;
@@ -13,7 +12,7 @@ class UserRepository {
   //**************************************************************//
 
   Future<List<UserModel>> fetchAllUser() async {
-    String path = "/users";
+    String path = baseUrl + "/users";
     final response = await CallApi().get(path);
     var extractedResponse = response["data"];
 
@@ -33,7 +32,7 @@ class UserRepository {
   //**************************************************************//
 
   Future<UserModel> fetchUser(int id) async {
-    String path = userShow + id.toString();
+    String path = baseUrl + "/users/" + id.toString();
     final response = await CallApi().get(path);
     UserModel user = UserModel.fromJson(response['data']);
     return user;

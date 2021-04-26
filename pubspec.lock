@@ -95,6 +95,13 @@ packages:
       relative: true
     source: path
     version: "0.0.1"
+  ii_responsive:
+    dependency: "direct main"
+    description:
+      path: "packages/ii_responsive"
+      relative: true
+    source: path
+    version: "0.0.1"
   matcher:
     dependency: transitive
     description:
