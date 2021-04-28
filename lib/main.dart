@@ -1,9 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:lara_flutter/config/state/state_registration.dart';
+import 'package:provider/provider.dart';
 import 'routes/route_names.dart';
 import 'routes/app_routes.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(
+    MultiProvider(
+      providers: StateRegistration().stateList(),
+      child: MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -17,8 +24,8 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      initialRoute: homeRoute,
       onGenerateRoute: AppRoutes().generateRoute,
+      initialRoute: homeRoute,
     );
   }
 }
